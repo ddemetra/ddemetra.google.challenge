@@ -1,0 +1,22 @@
+what is a stylesheet? 
+
+A stylesheet is a file containing the code that describes how elements on your webpage should be displayed.
+
+Cliffnotes on stylesheet -
+Write your CSS in a file called a *stylesheet* and then file in your html link. 
+
+To create a stylesheet, simply add a new file to your project, write some CSS, and save it as name-of-stylesheet.css.
+
+
+How to Link to a Stylesheet
+Before your webpage can use the stylesheet, you need to link to it. To do this, you'll need to create a <link> to your stylesheet in your HTML. To create a link, simply type the following inside the <head> of your HTML.
+
+<link href="path-to-stylesheet/stylesheet.css" rel="stylesheet">
+The href attribute specifies the path to the linked resource (you can link to other resources besides stylesheets, more on this later) and the rel attribute names the relationship between the resource and your document. In this case, the relationship is a stylesheet. When you're done, it will look something like this...
+
+<head>
+  <title>My Webpage</title>
+  <!-- ... -->
+  <link href="path-to-stylesheet/stylesheet.css" rel="stylesheet">
+  <!-- ... -->
+</head>
