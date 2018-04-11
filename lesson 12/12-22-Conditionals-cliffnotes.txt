@@ -1,0 +1,277 @@
+Conditionals
+
+
+DEFINITION: A flowchart is a visual diagram that outlines the solution to a problem through a series of logical statements. The order in which statements are evaluated and executed is called the control flow.
+
+Flowcharts quiz
+Booleans
+Yes/no, on/off, and true/false are all different ways to think of Booleans.
+
+A dragon appears and attacks
+If you make the decision to storm the castle, then the immediate resulting outcome is a dragon appears and attacks!
+
+—
+
+If...else statements
+If...else statements allow you to execute certain pieces of code based on a condition, or set of conditions, being met.
+
+if (/* this expression is true */) {
+  // run this code
+} else {
+  // run this code
+}
+
+This is extremely helpful because it allows you to choose which piece of code you want to run based on the result of an expression. For example,
+
+var a = 1;
+var b = 2;
+
+if (a > b) {
+  console.log("a is greater than b");
+} else {
+  console.log("a is less than or equal to b");
+}
+Prints: "a is less than or equal to b"
+
+A couple of important things to notice about if...else statements.
+
+The value inside the if statement is always converted to true or false. Depending on the value, the code inside the if statement is run or the code inside the else statement is run, but not both. The code inside the if and else statements are surrounded by curly braces {...} to separate the conditions and indicate which code should be run.
+
+TIP: When coding, sometimes you may only want to use an if statement. However, if you try to use only an else statement, then you will receive the error SyntaxError: Unexpected token else. You’ll see this error because else statements need an if statement in order to work. You can’t have an else statement without first having an if statement.
+
+—
+Directions:
+For this quiz, you're going to help solve a fictitious murder mystery that happened here at Udacity! A murder mystery is a game typically played at parties wherein one of the partygoers is secretly, and unknowingly, playing a murderer, and the other attendees must determine who among them is the criminal. It's a classic case of whodunnit.
+Since this might be your first time playing a murder mystery, we've simplified things quite a bit to make it easier. Here's what we know! In this murder mystery there are:
+	•	four rooms: the ballroom, gallery, billiards room, and dining room,
+	•	four weapons: poison, a trophy, a pool stick, and a knife,
+	•	and four suspects: Mr. Parkes, Ms. Van Cleve, Mrs. Sparr, and Mr. Kalehoff.
+We also know that each weapon corresponds to a particular room, so...
+	•	the poison belongs to the ballroom,
+	•	the trophy belongs to the gallery,
+	•	the pool stick belongs to the billiards room,
+	•	and the knife belongs to the dining room.
+And we know that each suspect was located in a specific room at the time of the murder.
+	•	Mr. Parkes was located in the dining room.
+	•	Ms. Van Cleve was located in the gallery.
+	•	Mrs. Sparr was located in the billiards room.
+	•	Mr. Kalehoff was located in the ballroom.
+To help solve this mystery, write a combination of conditional statements that:
+	1.	sets the value of weapon based on the room and
+	2.	sets the value of solved to true if the value of room matches the suspect's room
+Afterwards, print the following to the console if the mystery was solved:
+__________ did it in the __________ with the __________!
+Fill in the blanks with the name of the suspect, the room, and the weapon. For example,
+Mr. Parkes did it in the dining room with the knife!
+TIP: Make sure to test your code with different values. For example,  If room equals gallery and suspect equals Ms. Van Cleve, then Ms. Van Cleve did it in the gallery with the trophy! should be printed to the console.
+
+—
+Logical operators
+Logical operators can be used in conjunction with boolean values (true and false) to create complex logical expressions.
+By combining two boolean values together with a logical operator, you create a logical expression that returns another boolean value. Here’s a table describing the different logical operators:
+Operator
+Meaning
+Example
+How it works
+&&
+Logical AND
+value1 && value2
+Returns true if both value1 and value2 evaluate to true.
+||
+Logical OR
+value1 || value2
+Returns true if either value1 or value2 (or even both!) evaluates to true.
+!
+Logical NOT
+!value1
+Returns the opposite of value1. If value1 is true, then !value1 is false.
+
+——
+
+Truthy and Falsy
+Every value in JavaScript has an inherent boolean value. When that value is evaluated in the context of a boolean expression, the value will be transformed into that inherent boolean value.
+The paragraph above is pretty dense with information. You should probably re-read it again! ☝️
+Falsy values
+A value is falsy if it converts to false when evaluated in a boolean context. For example, an empty String "" is falsy because, "" evaluates to false. You already know if...else statements, so let's use them to test the truthy-ness of "".
+if ("") {
+    console.log("the value is truthy");
+} else {
+    console.log("the value is falsy");
+}
+Returns: "the value is falsy"
+Here’s the list of all of the falsy values:
+	1.	the Boolean value false
+	2.	the null type
+	3.	the undefined type
+	4.	the number 0
+	5.	the empty string ""
+	6.	the odd value NaN (stands for "not a number", check out the NaN MDN article)
+That's right, there are only six falsy values in all of JavaScript!
+
+Truthy values
+A value is truthy if it converts to true when evaluated in a boolean context. For example, the number 1 is truthy because, 1 evaluates to true. Let's use an if...else statement again to test this out:
+if (1) {
+    console.log("the value is truthy");
+} else {
+    console.log("the value is falsy");
+}
+Returns: "the value is truthy"
+Here are some other examples of truthy values:
+true
+42
+"pizza"
+"0"
+"null"
+"undefined"
+{}
+[]
+Essentially, if it's not in the list of falsy values, then it's truthy!
+
+—
+Ternary Operator
+Sometimes, you might find yourself with the following type of conditional.
+var isGoing = true;
+var color;
+
+if (isGoing) {
+  color = "green";
+} else {
+  color = "red";
+}
+
+console.log(color);
+Prints: "green"
+In this example, the variable color is being assigned to either "green" or "red" based on the value of isGoing. This code works, but it’s a rather lengthy way for assigning a value to a variable. Thankfully, in JavaScript there’s another way.
+TIP: Using if(isGoing) is the same as using if(isGoing === true). Alternatively, using if(!isGoing) is the same as using if(isGoing === false).
+Ternary operator
+The ternary operator provides you with a shortcut alternative for writing lengthy if...else statements.
+conditional ? (if condition is true) : (if condition is false)
+To use the ternary operator, first provide a conditional statement on the left-side of the ?. Then, between the ? and : write the code that would run if the condition is true and on the right-hand side of the :write the code that would run if the condition is false. For example, you can rewrite the example code above as:
+var isGoing = true;
+var color = isGoing ? "green" : "red";
+console.log(color);
+Prints: "green"
+This code not only replaces the conditional, but it also handles the variable assignment for color.
+If you breakdown the code, the condition isGoing is placed on the left side of the ?. Then, the first expression, after the ?, is what will be run if the condition is true and the second expression after the, :, is what will be run if the condition is false.
+
+___
+What will be printed to the console if the following code is run?
+var adult = true;
+var preorder = true;
+
+console.log("It costs $" + (adult ? "40.00" : "20.00") + " to attend the concert. Pick up your tickets at the " + (preorder ? "will call" : "the gate") + ".");
+
+A) it costs $40.00 to attend the concert. Pick up your ticket at the will call. 
+
+Using ternary statements in your code is completely optional. It just gives you another option for writing if...else statements.
+
+—
+If you find yourself repeating else if statements in your code, where each condition is based on the same value, then it might be time to use a switch statement.
+if (option === 1) {
+  console.log("You selected option 1.");
+} else if (option === 2) {
+  console.log("You selected option 2.");
+} else if (option === 3) {
+  console.log("You selected option 3.");
+} else if (option === 4) {
+  console.log("You selected option 4.");
+} else if (option === 5) {
+  console.log("You selected option 5.");
+} else if (option === 6) {
+  console.log("You selected option 6.");
+}
+Switch statement
+A switch statement is an another way to chain multiple else if statements that are based on the same value without using conditional statements. Instead, you just switch which piece of code is executed based on a value.
+switch (option) {
+  case 1:
+    console.log("You selected option 1.");
+  case 2:
+    console.log("You selected option 2.");
+  case 3:
+    console.log("You selected option 3.");
+  case 4:
+    console.log("You selected option 4.");
+  case 5:
+    console.log("You selected option 5.");
+  case 6:
+    console.log("You selected option 6.");
+}
+Here, each else if statement (option === [value]) has been replaced with a case clause (case: [value]) and those clauses have been wrapped inside the switch statement.
+When the switch statement first evaluates, it looks for the first case clause whose expression evaluates to the same value as the result of the expression passed to the switch statement. Then, it transfers control to that case clause, executing the associated statements.
+So, if you set option equal to 3...
+var option = 3;
+
+switch (option) {
+  ...
+}
+Prints: You selected option 3. You selected option 4. You selected option 5. You selected option 6.
+...then the switch statement prints out options 3, 4, 5, and 6.
+But that’s not exactly like the original if...else code at the top? So what’s missing?
+Break statement
+The break statement can be used to terminate a switch statement and transfer control to the code following the terminated statement. By adding a break to each case clause, you fix the issue of the switch statement falling-through to other case clauses.
+var option = 3;
+
+switch (option) {
+  case 1:
+    console.log("You selected option 1.");
+    break;
+  case 2:
+    console.log("You selected option 2.");
+    break;
+  case 3:
+    console.log("You selected option 3.");
+    break;
+  case 4:
+    console.log("You selected option 4.");
+    break;
+  case 5:
+    console.log("You selected option 5.");
+    break;
+  case 6:
+    console.log("You selected option 6.");
+    break; // technically, not needed
+}
+Prints: You selected option 3.
+—- 
+In some situations, you might want to leverage the "falling-through" behavior of switch statements to your advantage.
+For example, when your code follows a hierarchical-type structure.
+var tier = "nsfw deck";
+var output = "You’ll receive "
+
+switch (tier) {
+  case "deck of legends":
+    output += "a custom card, ";
+  case "collector's deck":
+    output += "a signed version of the Exploding Kittens deck, ";
+  case "nsfw deck":
+    output += "one copy of the NSFW (Not Safe for Work) Exploding Kittens card game and ";
+  default:
+    output += "one copy of the Exploding Kittens card game.";
+}
+
+console.log(output);
+Prints: You’ll receive one copy of the NSFW (Not Safe for Work) Exploding Kittens card game and one copy of the Exploding Kittens card game.
+In this example, based on the successful Exploding Kittens Kickstarter campaign (a hilarious card game created by Elan Lee), each successive tier builds on the next by adding more to the output. Without any break statements in the code, after the switch statement jumps to the "nsfw deck", it continues to fall-through until reaching the end of the switch statement.
+Also, notice the default case.
+var tier = "none";
+var output = "You’ll receive ";
+
+switch (tier) {
+  ... 
+  default:
+    output += "one copy of the Exploding Kittens card game.";
+}
+
+console.log(output);
+Prints: You’ll receive one copy of the Exploding Kittens card game.
+You can add a default case to a switch statement and it will be executed when none of the values match the value of the switch expression.
+—
+
+Last advice on lesson 12 (conditionals)
+- Break Down Problems (great sign of being a good programmer)
+- Conditional statements & logical operators (to be great at it - create more algorithms to solve even the most complex problems). 
+-Advanced Techniques (try to remember the lessons you learned from Udacity). 
+	- Truthy Falsy
+	-Ternary Operator
+	-Switch Statements
+
