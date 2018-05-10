@@ -1,73 +1,48 @@
-// jQuery variables
-const sizePicker = $("#sizePicker");
-const pixelCanvas = $('#pixelCanvas');
+
+// Select color input
+// Select size input
+
 
 // When size is submitted by the user, call makeGrid()
-// This function creates a grid based on the Height and Width inputs
-function makeGrid(inputWidth, inputHeight) {
+$("input[type= 'submit']").on("click", function(event) {
 	event.preventDefault();
-	let table = "";
+	// gridHeight
+	var height = $("#inputHeight").val();
+	// gridWidth
+	var width = $("#inputWeight").val();
 
-	for (let row = 0; row < inputHeight; row++) {
-		$('.row').remove();
-		table += "<tr class='row'>";
-		for (let column = 0; column < inputWidth; column++) {
-			if (column % 2 === 0 && row % 2 == 1) {
-				table += "<td class='grey'></td>";
-			} else if (column % 2 === 1 && row % 2 == 0) {
-				table += "<td class='grey'></td>";
-			} else {
-				table += "<td class='white'></td>";
+// make pixel canvas function to clear out old grid
+$("#pixelCanvas").empty();
+	makeGrid(height, width);
+});
+
+// Your code goes here!
+function makeGrid(height, width) {
+	for(let i = 0; i<height; i++) {
+		$("#pixelCanvas").append($("<tr></tr>"));
+		for(let j=0; j<width; j++) {
+			$("tr").last().append($("<td></td>"));
+		}
+	}
+	
+	$("#pixelCanvas").on("mouseover mousedown", "td", function(e) {
+		if (e.buttons === 1) {
+			if (paint === true) {
+				$(this).css("background-color", $("#colorPicker").val());
+			}
+			else {
+				$(this).css("background-color", "");
 			}
 		}
-		table += "</tr>";
+	});
+}
+
+// toggle between paint/erase
+$("input[name='tool']").on("change", function() {
+	if ($(this).val() === "paint") {
+		paint = true;
+	} 
+	else if ($(this).val() === "erase") {
+		paint = false;
 	}
-	pixelCanvas.append(table);
-}
-
-// Resets the canvas to default
-function reset(gridWidth, gridHeight) {
-	let confirmDelete = confirm('Do you really want to clear your beautiful work?');
-	if (confirmDelete) {
-    	makeGrid(gridWidth, gridHeight);	
-	};
-}
-
-$(document).ready(function() {
-	// Variables for color and size input
-	let gridWidth = sizePicker.find("input[name='height']").val();//$(inputWidth);
-	let gridHeight = sizePicker.find("input[name='width']").val();//$(inputHeight);
-	let gridColor = "#30a8a8";
-
-	// Create initial grid
-	makeGrid(gridWidth, gridHeight);
-
-	// Listener for the create/submit button
-	// This grabs the width and height from the user and replaces the existing grid
-	$('#button').on('click', function() {
-    	event.preventDefault();
-
-    	gridHeight = sizePicker.find("input[name='width']").val();//$(inputHeight);
-		gridWidth = sizePicker.find("input[name='height']").val();//$(inputWidth);
-
-		reset(gridWidth, gridHeight);
-	});
-
-	// Picks the color
-	$('#colorPicker').on('change', function() {
-		gridColor = $(this).val();
-	});
-
-	// Calls on the reset function when Reset button is clicked
-	$('#reset').on('click', function() {
-		reset(30, 30);
-	});
-
-	// Uses event delegation so that all tds classes (even ones created after the DOM loads) are affected
-	// Changes color to current color when mouse hovers on td
-	pixelCanvas.on('mousedown mouseover', 'td', function(event) {
-		if(event.buttons == 1){
-			$(this).css({'background-color': gridColor});
-		}
-	});
 });
