@@ -1,25 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Nosifer|Open+Sans');
+
+
 body {
+    font-family: 'Open Sans', sans-serif;
     text-align: center;
 }
 
-h1 {
-    font-family: 'Black Han Sans', sans-serif;
-    font-size: 70px;
-    margin: 0.2em;
-}
-
-h2 {
-    margin: 1em 0 0.25em;
-}
-
-h2:first-of-type {
-    margin-top: 0.5em;
+h1, 
+h2, 
+h3 {
+    margin: 0;
+    padding: 0;
 }
 
 table,
 tr,
 td {
-    border: 1px solid black;
+    border: 1px solid #8ef1f1;
+    background-color: #ffffff;
 }
 
 table {
@@ -36,5 +34,78 @@ td {
 }
 
 input[type=number] {
-    width: 6em;
+    width: 5em;
+    margin: 15px;
+    padding: 5px 10px;
+    color: #ed8d72;
+    text-align: center;
+}
+
+form {
+    width: 100%;
+/*    padding: 12px 20px;
+    margin: 8px 0;*/
+    box-sizing: border-box;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+/* elements */
+.body {
+    background-color: #fcfaf7;
+    color: #2b2e4a;
+}
+
+.gridbox {
+    border: 2px solid #1C2541;
+    border-radius: 1px;
+    width: 45%;
+    padding: 35px;
+    margin: 30px auto;
+    background-color: #fdfafa;
+    -webkit-box-shadow: 10px 10px 66px -15px rgba(153,153,153,1);
+    -moz-box-shadow: 10px 10px 66px -15px rgba(153,153,153,1);
+    box-shadow: 10px 10px 66px -15px rgba(153,153,153,1);
+}
+
+.title {
+    font-family: 'Nosifer', cursive;
+
+}
+
+.submitButton {
+    padding: 5px 10px;
+    background-color: #e4572e;
+    color: #fdfafa;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: 1px solid #e4572e;
+
+}
+
+.colorPicker {
+    font-family: 'Nosifer', cursive;
+    font-size: 1px;
+}
+
+.pixelCanvas {
+    margin-top: 30px;
+    background-color: #fcfaf7;
+    border-color: #2b2e4a;
+
+}
+
+.menu {
+    margin: 0;
+    padding: 0;
+    color: #e4572e;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.color {
+    margin: 15px;
+    padding: 5px;
 }
