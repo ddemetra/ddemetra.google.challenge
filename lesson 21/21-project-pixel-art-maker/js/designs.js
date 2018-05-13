@@ -41,8 +41,11 @@ function makeGrid(height, width) {
 $("input[name='tool']").on("change", function() {
 	if ($(this).val() === "paint") {
 		paint = true;
-	} 
-	else if ($(this).val() === "erase") {
+	} else if ($(this).val() === "erase") {
 		paint = false;
 	}
 });
+
+
+
+
