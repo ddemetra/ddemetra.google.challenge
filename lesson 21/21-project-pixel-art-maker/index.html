@@ -1,49 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset=utf-8>
-
     <title>Pixel Art Maker</title>
-    
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans|Open+Sans" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Nosifer|Open+Sans" rel="stylesheet">
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/custom-styles.css">
 </head>
-<body>
-    <div class="header">
-        <h1>Pixel Art Maker</h1>
-    </div>
-
-    <div class="menu">
-        <div class="color-picker">
-            <h2>Pick A Color</h2>
-            <input type="color" value="#30a8a8" id="colorPicker">
-        </div>
-
-        <div class="grid-input">
-            <h2>Choose Grid Size</h2>
-            <form id="sizePicker">
-                <input type="number" id="inputWidth" name="width" min="1" placeHolder="Width" value="30">
-                <input type="number" id="inputHeight" name="height" min="1" max="75" placeHolder="Height" value="30">
-                <button type="button" id="button">Create</button>
-                <button type="button" id="reset">Reset</button>
+<body class="body">
+    <!-- Add Menu -->
+    <div class="gridbox">
+            <h1 class="title">Lab: Pixel Art Maker</h1>
+            <form id="sizePicker">Grid Height:
+            <input type="number" id="inputHeight" name="height" min="1" value="25">Grid Width:
+            <input type="number" id="inputWeight" name="width" min="1" value="25">
+            <input type="submit" id="submit" class="submitButton" value="submit">
             </form>
-        </div>
+    <div class="menu">
+        <h2>Pick a Color</h2>
+        <input type="color" id="colorPicker" class="color">
+        <form>
+            <input id="paint-toggle" type="radio" name="tool" value="paint">
+            <label for="paint-toggle">Paint</label>
+            <input id="erase-toggle" type="radio" name="tool" value="erase">
+            <label for="erase-toggle">Erase</label>
+        </form>
     </div>
-
-    
-
-    <div class="design-canvas">
-        <h2>Let's Make Art!</h2>
-        <table id="pixelCanvas"></table>
+    <div class="canvas">
+        <table id="pixelCanvas" class="pixelCanvas">
+        </table>
     </div>
-
-    <!-- <button type="button" id="save">Save</button> -->
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</div>
+    <!-- Add Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/designs.js"></script>
 </body>
 </html>
