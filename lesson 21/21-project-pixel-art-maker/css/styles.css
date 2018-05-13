@@ -54,7 +54,7 @@ form {
 
 /* elements */
 .body {
-    background-color: #fcfaf7;
+    background-color: #fdfafa;
     color: #2b2e4a;
 }
 
@@ -72,6 +72,7 @@ form {
 
 .title {
     font-family: 'Nosifer', cursive;
+    font-size: 40px;
 
 }
 
