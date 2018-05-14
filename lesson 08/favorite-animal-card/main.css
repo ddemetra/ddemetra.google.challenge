@@ -1,0 +1,63 @@
+/* add your CSS here */
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed);
+
+
+body {
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+
+#container {
+  border: 2px solid #1C2541;
+  border-radius: 1px;
+  width: 300px;
+  padding: 15px;
+  margin: 10px auto;
+  background-color: #FDFAFA;
+  -webkit-box-shadow: 10px 10px 66px -15px rgba(153,153,153,1);
+	-moz-box-shadow: 10px 10px 66px -15px rgba(153,153,153,1);
+	box-shadow: 10px 10px 66px -15px rgba(153,153,153,1);
+}
+
+
+h1 {
+  padding-left: 1px;
+  color: #E4572E;
+  font-size: 40px;
+  line-height: 15px;
+}
+
+
+img {
+  width: 300px;
+  padding-bottom: 10px;
+}
+
+
+#card {
+  border: 2px solid #1C2541;
+  background-color: #EFD0CA; 
+  padding: 10px;
+}
+
+
+#interesting-fact {
+  font-style: italic;
+}
+
+
+#facts {
+  font-weight: bold;
+}
+
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer {
+  display: block;
+  text-align: center;
+  padding: 5px;
+}
